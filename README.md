@@ -1,50 +1,27 @@
-# Welcome to your Expo app 👋
+# Daylium App
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+When starting a new day, I've found it tedious to switch between different apps and views to get an overview of the upcoming day. That's why I wanted to create the Daylium app. 
 
-## Get started
+At a single glance on the Daylium app, you'll see:
+- Date and time
+- The day's weather 
+- Any calendar events for the day (device calendar integration)
 
-1. Install dependencies
+The app sends a daily morning notification to remind the user to open it and check their day.
 
-   ```bash
-   npm install
-   ```
+# Goal
 
-2. Start the app
+The goal of Daylium is to reduce morning friction by combining important daily information into a single, glanceable view.
 
-   ```bash
-   npx expo start
-   ```
+# The technology used
 
-In the output, you'll find options to open the app in a
+This app was built using [React Native](https://reactnative.dev/) with the [Expo](https://expo.dev/) framework:
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+- [**Expo Router**](https://docs.expo.dev/versions/latest/sdk/router/) – navigation and app structure  
+- [**Expo Calendar**](https://docs.expo.dev/versions/latest/sdk/calendar/) – device calendar access  
+- [**Expo Location**](https://docs.expo.dev/versions/latest/sdk/location/) – user location for weather 
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+Upcoming feature:
+- **Expo Notifications** – daily reminders
 
-## Get a fresh project
-
-When you're ready, run:
-
-```bash
-npm run reset-project
-```
-
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
-
-## Learn more
-
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+The project also uses the free [Open-Meteo API](https://open-meteo.com/) for fetching weather data based on user's location.

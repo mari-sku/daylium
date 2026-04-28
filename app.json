@@ -9,7 +9,11 @@
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "infoPlist": {
+        "NSCalendarsUsageDescription": "Daylium uses your calendar to show your events.",
+        "NSLocationWhenInUseUsageDescription": "Daylium uses your location to show local weather."
+      }
     },
     "android": {
       "adaptiveIcon": {
@@ -27,6 +31,13 @@
     },
     "plugins": [
       "expo-router",
+      "expo-calendar",
+      [
+        "expo-location",
+        {
+          "locationWhenInUsePermission": "Daylium uses your location to show local weather."
+        }
+      ],
       [
         "expo-splash-screen",
         {
