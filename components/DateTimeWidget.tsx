@@ -29,7 +29,8 @@ const styles = StyleSheet.create({
     fontSize: 50,
     opacity: 0.75,
     lineHeight: 80,
-    color: '#cd6b41'
+    color: '#cd6b41',
+    letterSpacing: 3
   },
 
   weekday: {
