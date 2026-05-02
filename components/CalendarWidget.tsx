@@ -1,3 +1,4 @@
+import { Card } from '@/components/Card';
 import { useCalendar } from '@/hooks/useCalendar';
 import { StyleSheet, Text, View } from 'react-native';
 
@@ -15,6 +16,7 @@ export function CalendarWidget() {
   if (error) return <Text>{error}</Text>;
 
   return (
+    <Card>
     <View style={styles.container}>
       <Text style={styles.title}>Today</Text>
 
@@ -31,6 +33,7 @@ export function CalendarWidget() {
         ))
       )}
     </View>
+    </Card>
   );
 }
 

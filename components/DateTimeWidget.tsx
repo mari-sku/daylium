@@ -1,13 +1,19 @@
 import { useDateTime } from '@/hooks/useDateTime';
 import { StyleSheet, Text, View } from 'react-native';
 
+
 export function DateTimeWidget() {
   const { time, weekday, day, month, year } = useDateTime();
 
   return (
     <View style={styles.container}>
-      <Text style={styles.time}>{time}, {weekday}</Text>
-      <Text style={styles.date}>{day} of {month}, {year}</Text>
+      <Text style={styles.time}>{time}</Text>
+
+      <Text style={styles.weekday}>{weekday}</Text>
+
+      <Text style={styles.date}>
+        {month} {day}, {year}
+      </Text>
     </View>
   );
 }
@@ -15,17 +21,29 @@ export function DateTimeWidget() {
 const styles = StyleSheet.create({
   container: {
     paddingHorizontal: 24,
-    paddingVertical: 20,
+    paddingVertical: 32
   },
+
   time: {
-    fontSize: 40,
-    fontWeight: '400',
-    opacity: 0.6,
-    marginBottom: 4,
+    fontFamily: 'Inter_500Medium',
+    fontSize: 50,
+    opacity: 0.75,
+    lineHeight: 80,
+    color: '#cd6b41'
   },
+
+  weekday: {
+    fontFamily: 'CormorantGaramond_400Regular',
+    fontSize: 45,
+    opacity: 0.75,
+    marginTop: 2,
+    marginBottom: 10,
+    letterSpacing: 1
+  },
+
   date: {
-    fontSize: 32,
-    fontWeight: '600',
-    letterSpacing: -0.5,
+    fontFamily: 'Inter_300Light',
+    fontSize: 20,
+    letterSpacing: -0.5
   },
 });
