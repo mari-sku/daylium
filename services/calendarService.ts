@@ -1,7 +1,7 @@
 import * as Calendar from 'expo-calendar';
 
 export async function getTodayEvents() {
-  // Ask permission
+
   const { status } = await Calendar.requestCalendarPermissionsAsync();
 
   if (status !== 'granted') {
