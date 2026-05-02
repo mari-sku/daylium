@@ -1,3 +1,4 @@
+import { Card } from '@/components/Card';
 import { useWeather } from '@/hooks/useWeather';
 import { StyleSheet, Text, View } from 'react-native';
 
@@ -8,10 +9,12 @@ export function WeatherWidget() {
   if (error) return <Text>{error}</Text>;
 
   return (
+    <Card>
     <View style={styles.container}>
       <Text style={styles.temp}>{Math.round(weather.temperature)}°C</Text>
       <Text style={styles.wind}>Wind: {weather.windspeed} km/h</Text>
     </View>
+    </Card>
   );
 }
 
