@@ -26,10 +26,11 @@ const styles = StyleSheet.create({
 
   time: {
     fontFamily: 'Inter_500Medium',
-    fontSize: 50,
+    fontSize: 70,
     opacity: 0.75,
     lineHeight: 80,
-    color: '#cd6b41'
+    color: '#cd6b41',
+    letterSpacing: 3
   },
 
   weekday: {
@@ -44,6 +45,8 @@ const styles = StyleSheet.create({
   date: {
     fontFamily: 'Inter_300Light',
     fontSize: 20,
-    letterSpacing: -0.5
+    letterSpacing: -0.5,
+    opacity: 0.7,
+    color: '#a75836'
   },
 });
