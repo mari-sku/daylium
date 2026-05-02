@@ -20,6 +20,6 @@ const styles = StyleSheet.create({
   container: {
     paddingTop: 60,
     paddingBottom: 40,
-    backgroundColor: '#f8e2ce'
+    backgroundColor: '#f5dbc3'
   },
 });

@@ -66,9 +66,11 @@ const styles = StyleSheet.create({
   },
 
   temp: {
-    fontSize: 36,
+    fontSize: 30,
     fontWeight: '600',
     marginHorizontal: 14,
+    fontFamily: 'Inter_400Regular',
+    opacity: 0.70
   },
 
   stats: {
@@ -83,8 +85,9 @@ const styles = StyleSheet.create({
   },
 
   text: {
-    fontSize: 14,
+     fontFamily: 'Inter_400Regular',
     opacity: 0.6,
+    fontSize: 14,
     marginLeft: 6,
   },
 });
