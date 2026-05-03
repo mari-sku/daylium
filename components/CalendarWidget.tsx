@@ -35,7 +35,6 @@ export function CalendarWidget() {
                   <Text style={styles.time}>{formatTime(event.startDate)}</Text>
                   <Text style={styles.timeEnd}>{formatTime(event.endDate)}</Text>
                 </View>
-
                 <Text style={styles.name}>{event.title}</Text>
               </View>
 
@@ -52,79 +51,70 @@ export function CalendarWidget() {
 
 const styles = StyleSheet.create({
   container: {
-    paddingHorizontal: 24,
-    paddingVertical: 20,
+    paddingHorizontal: 20,
+    paddingVertical: 8,
   },
-
   title: {
-    fontSize: 25,
+    fontSize: 23,
     fontWeight: '600',
-    marginBottom: 20,
+    marginBottom: 14,
     fontFamily: 'CormorantGaramond_600SemiBold',
     opacity: 0.75,
+    paddingBottom: 10
   },
-
   eventRow: {
-    marginBottom: 12,
+    marginBottom: 8,
   },
-
   timeline: {
     position: 'absolute',
-    left: 6,
+    left: 3,
     top: 6,
     bottom: 6,
     alignItems: 'center',
-    
   },
-
   dot: {
     width: 6,
     height: 6,
     borderRadius: 3,
     backgroundColor: 'rgb(201, 112, 44)',
   },
-
   line: {
     flex: 1,
     width: 1,
     backgroundColor: 'rgb(239, 170, 116)',
     marginVertical: 4,
   },
-
-
   eventContent: {
     flexDirection: 'row',
     alignItems: 'center',
     marginLeft: 20,
   },
-
   timeColumn: {
-    width: 70,
+    width: 60,
     justifyContent: 'center',
   },
-
   time: {
+    fontSize: 14,
     opacity: 0.6,
-    marginBottom: 10,
+    marginBottom: 4,
   },
-
   timeEnd: {
+    fontSize: 13,
     opacity: 0.4,
   },
-
   name: {
     flex: 1,
+    fontSize: 15,
+    fontFamily: 'Inter_400Regular',
   },
-
   empty: {
     opacity: 0.6,
     fontFamily: 'Inter_400Regular',
   },
-
   separator: {
     height: 1,
     backgroundColor: 'rgba(0,0,0,0.06)',
-    marginVertical: 10,
+    marginVertical: 6,
     marginLeft: 20,
   },
 });
