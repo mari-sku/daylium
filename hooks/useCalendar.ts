@@ -1,5 +1,6 @@
 import { getTodayEvents } from '@/services/calendarService';
 import { useEffect, useState } from 'react';
+import { AppState } from 'react-native';
 
 export function useCalendar() {
   const [events, setEvents] = useState<any[]>([]);
@@ -25,7 +26,15 @@ export function useCalendar() {
       }
     };
 
-    load();
+     load();
+
+    const subscription = AppState.addEventListener('change', (nextState) => {
+      if (nextState === 'active') {
+        load();
+      }
+    });
+
+    return () => subscription.remove();
   }, []);
 
   return { events, loading, error };

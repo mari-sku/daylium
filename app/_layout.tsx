@@ -36,7 +36,7 @@ export default function RootLayout() {
   useEffect(() => {
     async function initNotifications() {
       await setupNotifications();
-      await scheduleDailyMorningNotification();
+      await scheduleDailyMorningNotification(6, 0);
     }
 
     initNotifications();
@@ -50,10 +50,17 @@ export default function RootLayout() {
     );
   }
 
-  return (
+ return (
+  <View style={{ flex: 1, backgroundColor: '#111827' }}>
     <PaperProvider theme={paperTheme}>
       <ThemeProvider value={DefaultTheme}>
-        <Stack>
+        <Stack
+          screenOptions={{
+            contentStyle: {
+              backgroundColor: '#111827',
+            },
+          }}
+        >
           <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
           <Stack.Screen name="modal" options={{ presentation: 'modal', title: 'Modal' }} />
         </Stack>
@@ -61,5 +68,6 @@ export default function RootLayout() {
         <StatusBar style="dark" />
       </ThemeProvider>
     </PaperProvider>
-  );
+  </View>
+);
 }

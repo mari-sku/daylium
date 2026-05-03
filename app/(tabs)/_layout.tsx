@@ -1,7 +1,7 @@
+import { HapticTab } from '@/components/haptic-tab';
+import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { Tabs } from 'expo-router';
 import React from 'react';
-
-import { HapticTab } from '@/components/haptic-tab';
 
 export default function TabLayout() {
   return (
@@ -9,19 +9,30 @@ export default function TabLayout() {
       screenOptions={{
         headerShown: false,
         tabBarButton: HapticTab,
+        tabBarShowLabel: false,
+         tabBarStyle: {
+    backgroundColor: '#f5dbc3', 
+    height: 70,
+  },
+  
       }}
     >
       <Tabs.Screen
         name="index"
         options={{
           title: 'Home',
+          tabBarIcon: ({ color }) => (
+            <MaterialCommunityIcons name="home-outline" size={24} color='#cd6b41' />
+          ),
         }}
       />
-
       <Tabs.Screen
-        name="explore"
+        name="settings"
         options={{
-          title: 'Explore',
+          title: 'Settings',
+          tabBarIcon: ({ color }) => (
+            <MaterialCommunityIcons name="cog-outline" size={24} color='#cd6b41' />
+          ),
         }}
       />
     </Tabs>

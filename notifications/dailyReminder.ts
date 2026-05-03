@@ -27,7 +27,7 @@ export async function setupNotifications() {
   }
 }
 
-export async function scheduleDailyMorningNotification() {
+export async function scheduleDailyMorningNotification(hour: number, minute: number) {
   // cancel old ones first
   await Notifications.cancelAllScheduledNotificationsAsync();
  
@@ -38,15 +38,15 @@ await Notifications.scheduleNotificationAsync({
   },
   trigger: {
 
-    // these interval ones are for testing, uncomment the actual time below when needed
+    // these interval ones are for testing, uncomment the calendar trigger below when needed
 
-      type: Notifications.SchedulableTriggerInputTypes.TIME_INTERVAL,
-      seconds: 10,
-      repeats: false,
-    // type: Notifications.SchedulableTriggerInputTypes.CALENDAR,
-    // hour: 6,
-    // minute: 0,
-    // repeats: true,
+      // type: Notifications.SchedulableTriggerInputTypes.TIME_INTERVAL,
+      // seconds: 10,
+      // repeats: false,
+    type: Notifications.SchedulableTriggerInputTypes.CALENDAR,
+    hour,
+    minute,
+    repeats: true,
   },
 });
 }
