@@ -54,8 +54,8 @@ row: {
     paddingVertical: 16,
   },
    image: {
-    width: 160,
-    height: 140,
+    width: 140,
+    height: 120,
     borderRadius: 8,
   },
 });
