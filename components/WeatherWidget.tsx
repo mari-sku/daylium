@@ -13,7 +13,7 @@ export function WeatherWidget() {
 
   if (loading) return <Text>Loading weather...</Text>;
   if (error) return <Text>{error}</Text>;
-  if (!weather) return null;
+  if (!weather) return <Text>Weather couldn&apost;t be fetched</Text>;
 
   const icon = getWeatherIcon(weather.weatherCode);
 
@@ -69,11 +69,12 @@ const styles = StyleSheet.create({
   stats: {
     flexDirection: 'column',
     marginLeft: 40,
+    
   },
   row: {
     flexDirection: 'row',
     alignItems: 'center',
-    marginBottom: 6,
+    marginBottom: 10,
   },
   text: {
     fontFamily: 'Inter_400Regular',
