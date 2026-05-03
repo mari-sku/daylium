@@ -1,22 +1,27 @@
 import { useDateTime } from '@/hooks/useDateTime';
-import { StyleSheet, Text, View } from 'react-native';
+import { Image, StyleSheet, Text, View } from 'react-native';
+
 
 export function DateTimeWidget() {
   const { time, weekday, day, month, year } = useDateTime();
 
   return (
+    <View style={styles.row}>
     <View style={styles.container}>
       <Text style={styles.time}>{time}</Text>
       <Text style={styles.weekday}>{weekday}</Text>
       <Text style={styles.date}>{month} {day}, {year}</Text>
+    </View>
+     <Image source={require('@/assets/images/sun_image.png')} style={styles.image} />
     </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    paddingHorizontal: 24,
+    paddingHorizontal: 12,
     paddingVertical: 16,
+    paddingRight: 16,
   },
   time: {
     fontFamily: 'Inter_500Medium',
@@ -40,5 +45,17 @@ const styles = StyleSheet.create({
     letterSpacing: 1,
     opacity: 0.7,
     color: '#a75836',
+  },
+row: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    paddingHorizontal: 24,
+    paddingVertical: 16,
+  },
+   image: {
+    width: 160,
+    height: 140,
+    borderRadius: 8,
   },
 });
