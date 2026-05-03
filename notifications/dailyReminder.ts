@@ -1,8 +1,6 @@
 import * as Notifications from 'expo-notifications';
 import { Platform } from 'react-native';
 
-
-// handler to tell Expo how to handle notifications. did not work without this!
 Notifications.setNotificationHandler({
   handleNotification: async () => ({
     shouldShowAlert: true,
@@ -36,7 +34,7 @@ export async function scheduleDailyMorningNotification() {
 await Notifications.scheduleNotificationAsync({
   content: {
     title: 'Good morning ☀️',
-    body: 'Tap here to check your day!',
+    body: 'Tap here to check your day',
   },
   trigger: {
 
